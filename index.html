@@ -76,221 +76,86 @@ section{padding-top:75px;padding-bottom:75px}
 .ipbox{background:linear-gradient(120deg,#14251b,#101a25);box-shadow:0 15px 45px #0007}
 @media(max-width:700px){.hero{min-height:520px}.hero h1{font-size:clamp(48px,14vw,76px)}}
 
+
+:root{--green:#9dff00;--bg:#05090d;--panel:#101a20;--line:#314039}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--bg);color:#f4fff5;font-family:Arial,sans-serif}
+.container{width:min(1160px,92%);margin:auto}a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:20;background:#05090deF;border-bottom:1px solid #26352d;backdrop-filter:blur(14px)}
+nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.logo{font-weight:1000;font-size:27px;letter-spacing:2px}.logo span,.hero h1 span{color:var(--green)}
+.links{display:flex;gap:28px}.links a{color:#d5dfd7;font-weight:bold;font-size:14px}.links a:hover{color:var(--green)}
+.nav-join{border:1px solid var(--green);border-radius:7px;padding:12px 16px;color:var(--green);font-weight:bold;font-size:12px}
+.hero{height:min(780px,calc(100vh - 76px));min-height:650px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(180deg,#101a37 0%,#28375b 38%,#ed8748 65%,#17251c 100%)}
+.world-sky{position:absolute;inset:0;background:radial-gradient(circle at 17% 48%,#ffe9a0 0 4%,#f39b50 5%,transparent 22%),radial-gradient(circle at 80% 18%,#25305c 0 18%,transparent 48%),linear-gradient(180deg,transparent 40%,#080d0c 100%)}
+.moon{position:absolute;top:16%;right:19%;width:70px;height:70px;background:#d8e7ff;box-shadow:0 0 60px #a5c6ff;border-radius:50%}
+.mountain{position:absolute;bottom:0;width:120%;height:47%;clip-path:polygon(0 100%,0 65%,13% 30%,22% 62%,34% 18%,45% 64%,58% 12%,71% 58%,82% 20%,100% 66%,100% 100%);background:#1b342b}
+.m2{height:34%;background:#0c1b19;transform:scaleX(-1);opacity:.9}
+.castle{position:absolute;right:12%;bottom:25%;width:330px;height:270px;filter:drop-shadow(0 12px 15px #0009)}
+.castle-core{position:absolute;bottom:0;left:55px;width:220px;height:145px;background:linear-gradient(90deg,#38465a,#1a2639);border:7px solid #141d2a;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.tower{position:absolute;bottom:105px;width:75px;height:165px;background:linear-gradient(90deg,#5a6374,#283348);border:7px solid #182235}
+.tower:before{content:"";position:absolute;top:-48px;left:-7px;border-left:38px solid transparent;border-right:38px solid transparent;border-bottom:50px solid #202d45}
+.t1{left:35px}.t2{right:20px;height:210px}
+.bridge{position:absolute;bottom:-5px;left:0;width:100%;height:18px;background:#66513b}
+.pixel-player{position:absolute;left:17%;bottom:13%;width:110px;height:230px;filter:drop-shadow(10px 12px 8px #0009)}
+.pixel-player .head{position:absolute;top:0;left:28px;width:60px;height:62px;background:linear-gradient(90deg,#9c6846 50%,#70462f 50%);border:6px solid #28201b}
+.pixel-player .body{position:absolute;top:62px;left:22px;width:72px;height:92px;background:#18518b;border:5px solid #17202a}
+.pixel-player .cape{position:absolute;top:65px;left:4px;width:28px;height:105px;background:#111d1c;transform:skewY(10deg)}
+.pixel-player .legs{position:absolute;bottom:0;left:26px;width:65px;height:75px;background:linear-gradient(90deg,#27334b 50%,#18243a 50%);border:5px solid #111923}
+.pixel-player .sword{position:absolute;right:-42px;top:92px;width:12px;height:95px;background:#65eaff;transform:rotate(38deg);box-shadow:0 0 15px #56eaff}
+.wolf{position:absolute;left:10%;bottom:12%;font-size:66px;filter:drop-shadow(5px 8px 5px #000)}
+.hero-content{position:relative;z-index:3;margin-top:-55px;padding:24px}.tag,.eyebrow{color:var(--green);letter-spacing:4px;font-size:12px;font-weight:900}
+.hero h1{font-size:clamp(76px,12vw,150px);line-height:.85;margin:20px 0;text-shadow:0 10px 25px #000;letter-spacing:-7px}.hero-content h2{font-size:clamp(25px,4vw,48px);margin:15px 0;text-shadow:0 4px 14px #000}.hero p{color:#f1f4ed;font-size:18px;text-shadow:0 3px 10px #000}
+.hero-button{display:inline-block;border:0;border-radius:8px;padding:17px 28px;background:var(--green);color:#10190b;font-weight:1000;letter-spacing:1px;box-shadow:0 0 30px #8dff0066;cursor:pointer}
+.hero-stats{position:absolute;z-index:4;bottom:24px;left:50%;transform:translateX(-50%);width:min(900px,90%);display:flex;justify-content:space-around;gap:15px;padding:18px;background:#05090ddd;border:1px solid #52654c;border-radius:14px;backdrop-filter:blur(10px)}
+.hero-stats div{display:grid;gap:7px}.hero-stats small{color:#aeb9b0;font-size:10px;letter-spacing:2px}.hero-stats b{color:var(--green);font-size:14px}
+section{padding:82px 0}h2{font-size:36px;margin:12px 0 28px}.grid,.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature,.rule{background:linear-gradient(145deg,#14221c,#0b1115);border:1px solid var(--line);border-radius:14px;padding:25px;box-shadow:0 15px 35px #0005}.feature span{font-size:30px}.feature h3{font-size:22px}.feature p,.rule p{color:#aebbb1;line-height:1.6;font-size:14px}
+.server-card{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:35px;border:1px solid #506b3d;border-radius:18px;background:linear-gradient(110deg,#14251b,#111d2a)}
+.server-card p{color:#aab8ad}.server-ip{font: bold 24px monospace;color:var(--green);overflow-wrap:anywhere}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.rule b{color:var(--green)}
+.gallery-card{height:230px;border:1px solid #52664b;border-radius:14px;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;background:linear-gradient(0deg,#030807e8,transparent 80%),linear-gradient(135deg,#3c6841,#192b49 60%,#c17c4a);box-shadow:inset 0 0 50px #0005}.gallery-card span{color:var(--green);font-weight:bold}.gallery-card h3{font-size:24px;margin:8px 0}.g2{background:linear-gradient(0deg,#030807e8,transparent 80%),linear-gradient(135deg,#87623e,#324e58,#172f22)}.g3{background:linear-gradient(0deg,#030807e8,transparent 80%),linear-gradient(135deg,#283f72,#55416b,#a86a3b)}
+footer{border-top:1px solid #29372e;padding:28px;color:#aab8ad;font-size:13px}footer b{color:var(--green)}
+@media(max-width:720px){nav{padding:12px 0;flex-wrap:wrap}.links{order:3;width:100%;justify-content:center;gap:18px}.nav-join{font-size:10px}.hero{min-height:700px;height:auto}.hero-content{margin-top:-65px}.pixel-player{left:3%;transform:scale(.7);transform-origin:bottom left}.wolf{left:1%;font-size:42px}.castle{right:-10%;transform:scale(.7);transform-origin:bottom right}.hero-stats{bottom:12px;gap:10px;padding:12px}.hero-stats b{font-size:10px}.hero-stats small{font-size:8px}.grid,.gallery-grid,.rules{grid-template-columns:1fr}h2{font-size:29px}.server-card{padding:24px}}
+
 </style>
 </head>
 <body>
-
-<header>
-<nav class="container">
- <a class="logo" href="#">BLO<span>C</span>TR</a>
- <div class="links">
-  <a href="#hakkinda">Ana Sayfa</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#sunucu">Sunucu</a>
-  <a href="#kurallar">Kurallar</a>
- </div>
-</nav>
-</header>
-
-<div class="hero" id="hakkinda">
- <div class="tag">MINECRAFT JAVA SURVIVAL SMP</div>
- <h1>BUILD YOUR<br><span>LEGACY.</span></h1>
- <p>Kendi hikâyeni yaz. Dünyayı keşfet, arkadaşlarınla oyna ve BLOCTR'nin bir parçası ol.</p>
- <div class="buttons">
-  <a class="btn green" href="#sunucu">SUNUCUYA KATIL</a>
- </div>
+<header><nav class="container">
+<a class="logo" href="#">⛏ BLO<span>C</span>TR</a>
+<div class="links"><a href="#anasayfa">Ana Sayfa</a><a href="#sunucu">Sunucu</a><a href="#kurallar">Kurallar</a><a href="#galeri">Galeri</a></div>
+<a class="nav-join" href="#sunucu">SUNUCUYA KATIL ↗</a>
+</nav></header>
+<main>
+<section class="hero" id="anasayfa">
+<div class="world-sky"></div><div class="moon"></div><div class="mountain m1"></div><div class="mountain m2"></div>
+<div class="castle"><div class="tower t1"></div><div class="tower t2"></div><div class="castle-core"></div><div class="bridge"></div></div>
+<div class="pixel-player"><div class="head"></div><div class="body"></div><div class="cape"></div><div class="legs"></div><div class="sword"></div></div>
+<div class="wolf">🐺</div>
+<div class="hero-content">
+<div class="tag">MINECRAFT JAVA • SURVIVAL SMP</div>
+<h1>BLOC<span>TR</span></h1>
+<h2>MACERAYA KATIL!</h2>
+<p>Kendi hikâyeni yaz. Dünyayı keşfet. BLOCTR'de efsaneni başlat.</p>
+<a class="hero-button" href="#sunucu">▶ &nbsp; MACERAYA KATIL</a>
 </div>
-
-<section class="container">
- <div class="eyebrow">WELCOME TO BLOCTR</div>
- <h2>Bir dünyadan fazlası.</h2>
- <div class="grid">
-  <div class="panel"><h3>🌍 Survival</h3><p>Keşfet, maden kaz ve kendi dünyanı kur.</p></div>
-  <div class="panel"><h3>⚔️ Topluluk</h3><p>Arkadaşlarınla oyna ve birlikte geliş.</p></div>
-  <div class="panel"><h3>⚡ Macera</h3><p>Yeni yerler keşfet, kendi maceranı yaşa.</p></div>
- </div>
+<div class="hero-stats"><div><small> SUNUCU ADRESİ</small><b>bloctr.swiftservers.org</b></div><div><small> OYUN TÜRÜ</small><b>Java Survival SMP</b></div><div><small> MACERA</small><b>Seni bekliyor!</b></div></div>
 </section>
-
-
-<section class="container" id="galeri">
- <div class="eyebrow">EXPLORE THE WORLD</div>
- <h2>BLOCTR dünyasından kareler.</h2>
- <div class="grid">
-  <div class="panel" style="padding:0;overflow:hidden">
-   <img src="https://images.unsplash.com/photo-1607513746994-51f730a44832?auto=format&fit=crop&w=900&q=85" alt="Bloklardan oluşan oyun dünyası" style="width:100%;height:190px;object-fit:cover">
-   <div style="padding:18px"><b>Keşfet</b><p>Yeni dünyalara doğru yola çık.</p></div>
-  </div>
-  <div class="panel" style="padding:0;overflow:hidden">
-   <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=900&q=85" alt="Piksel tarzı oyun manzarası" style="width:100%;height:190px;object-fit:cover">
-   <div style="padding:18px"><b>İnşa et</b><p>Kendi üssünü ve yapılarını oluştur.</p></div>
-  </div>
-  <div class="panel" style="padding:0;overflow:hidden">
-   <img src="https://images.unsplash.com/photo-1587573089734-09cb69c0f2e4?auto=format&fit=crop&w=900&q=85" alt="Oyun dünyasında macera" style="width:100%;height:190px;object-fit:cover">
-   <div style="padding:18px"><b>Maceraya katıl</b><p>Survival yolculuğunu başlat.</p></div>
-  </div>
- </div>
-</section>
-
-
-<section class="container gallery" id="galeri">
- <div class="eyebrow">BLOCTR GALLERY</div><h2>Bu dünyada kendi izini bırak.</h2>
- <div class="grid">
-  <div class="panel"><img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=900&q=85" alt="Oyun dünyası"><div class="caption"><h3>Keşfet</h3><p>Yeni yerler, yeni maceralar.</p></div></div>
-  <div class="panel"><img src="https://images.unsplash.com/photo-1607513746994-51f730a44832?auto=format&fit=crop&w=900&q=85" alt="Blok tarzı manzara"><div class="caption"><h3>İnşa et</h3><p>Hayalindeki yapıyı oluştur.</p></div></div>
-  <div class="panel"><img src="https://images.unsplash.com/photo-1587573089734-09cb69c0f2e4?auto=format&fit=crop&w=900&q=85" alt="Maceraya katıl"><div class="caption"><h3>Maceraya katıl</h3><p>BLOCTR'de hikâyen şimdi başlıyor.</p></div></div>
- </div>
-</section>
-
-<section class="container" id="sunucu">
- <div class="ipbox">
-  <div>
-   <div class="eyebrow">SERVER ADDRESS</div>
-   <h2>Sunucuya katıl.</h2>
-   <div class="ip" id="serverIP">bloctr.swiftservers.org</div>
-   <p class="muted">Minecraft Java Edition</p>
-  </div>
-  <button class="green" onclick="copyIP()">IP'Yİ KOPYALA</button>
- </div>
-</section>
-
-<section class="container" id="kurallar">
- <div class="eyebrow">PLAY FAIR</div>
- <h2>Sunucu kuralları.</h2>
- <div class="rules">
-  <div class="rule"><b>01 — Hile yasak</b><p class="muted">Hile ve X-Ray kullanılamaz.</p></div>
-  <div class="rule"><b>02 — Saygılı ol</b><p class="muted">Hakaret ve zorbalık yasaktır.</p></div>
-  <div class="rule"><b>03 — Hırsızlık yapma</b><p class="muted">Başkasının eşyalarını izinsiz alma.</p></div>
-  <div class="rule"><b>04 — Griefing yasak</b><p class="muted">Başkasının yapılarına zarar verme.</p></div>
-  <div class="rule"><b>05 — Spam yapma</b><p class="muted">Sohbeti gereksiz mesajlarla doldurma.</p></div>
-  <div class="rule"><b>06 — Bug kullanma</b><p class="muted">Oyun açıklarını kötüye kullanma.</p></div>
- </div>
-</section>
-
-<footer>
- <div class="container">BLOCTR SMP © 2026 — BUILD YOUR LEGACY.</div>
-</footer>
-
+<section class="container features"><div class="eyebrow">BLOCTR DÜNYASI</div><h2>Bir dünyadan fazlası.</h2><div class="grid">
+<article class="feature f1"><span>⛏</span><h3>Keşfet</h3><p>Mağaralara in, yeni bölgeler bul ve dünyayı keşfet.</p></article>
+<article class="feature f2"><span>🏡</span><h3>İnşa et</h3><p>Kendi üssünü kur, hayalindeki yapıları tasarla.</p></article>
+<article class="feature f3"><span>⚔</span><h3>Birlikte oyna</h3><p>Arkadaşlarınla maceraya atıl ve birlikte geliş.</p></article>
+</div></section>
+<section class="container" id="sunucu"><div class="server-card"><div><div class="eyebrow">JOIN THE SERVER</div><h2>Macera burada başlıyor.</h2><p>Minecraft Java Edition</p><div class="server-ip" id="serverIP">bloctr.swiftservers.org</div></div><button class="hero-button" onclick="copyIP()">IP'Yİ KOPYALA</button></div></section>
+<section class="container" id="kurallar"><div class="eyebrow">PLAY FAIR</div><h2>Sunucu kuralları.</h2><div class="rules">
+<div class="rule"><b>01 — Hile yasak</b><p>Hile ve X-Ray kullanılamaz.</p></div><div class="rule"><b>02 — Saygılı ol</b><p>Hakaret ve zorbalık yasaktır.</p></div>
+<div class="rule"><b>03 — Hırsızlık yapma</b><p>Başkasının eşyalarını izinsiz alma.</p></div><div class="rule"><b>04 — Griefing yasak</b><p>Başkasının yapılarına zarar verme.</p></div>
+<div class="rule"><b>05 — Spam yapma</b><p>Sohbeti gereksiz mesajlarla doldurma.</p></div><div class="rule"><b>06 — Bug kullanma</b><p>Oyun açıklarını kötüye kullanma.</p></div>
+</div></section>
+<section class="container gallery" id="galeri"><div class="eyebrow">YOUR NEXT ADVENTURE</div><h2>BLOCTR'de seni neler bekliyor?</h2><div class="gallery-grid">
+<div class="gallery-card g1"><span>01</span><h3>Yeni dünyalar</h3></div><div class="gallery-card g2"><span>02</span><h3>Büyük yapılar</h3></div><div class="gallery-card g3"><span>03</span><h3>Unutulmaz maceralar</h3></div>
+</div></section>
+</main><footer><div class="container"><b>BLOCTR SMP</b> © 2026 — BUILD YOUR LEGACY.</div></footer>
 <script>
-const STORAGE_KEY="bloctr_records_v3";
-const ADMIN_PASSWORD="72797";
-let isAdmin=false;
-
-function getRecords(){
- try{
-  return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
- }catch(error){
-  return [];
- }
-}
-
-function saveRecord(record){
- const records=getRecords();
- records.unshift({
-  id:Date.now()+"-"+Math.random().toString(16).slice(2),
-  date:new Date().toLocaleString("tr-TR"),
-  ...record
- });
- localStorage.setItem(STORAGE_KEY,JSON.stringify(records));
- document.getElementById("suggestForm").reset();
- document.getElementById("submitMessage").textContent="Bildirim bu tarayıcıya kaydedildi.";
- if(isAdmin)showRecords();
-}
-
-function copyIP(){
- const ip=document.getElementById("serverIP").textContent.trim();
- if(navigator.clipboard && window.isSecureContext){
-  navigator.clipboard.writeText(ip).then(()=>alert("IP kopyalandı!"))
-   .catch(()=>prompt("IP adresini kopyala:",ip));
- }else{
-  prompt("IP adresini kopyala:",ip);
- }
-}
-
-document.getElementById("suggestForm").addEventListener("submit",function(e){
- e.preventDefault();
- const data=new FormData(this);
- saveRecord({
-  type:data.get("type"),
-  username:data.get("username"),
-  title:data.get("title"),
-  message:data.get("message")
- });
-});
-
-document.getElementById("loginForm").addEventListener("submit",function(e){
- e.preventDefault();
- const password=document.getElementById("adminPassword").value;
-
- if(password===ADMIN_PASSWORD){
-  isAdmin=true;
-  document.getElementById("loginBox").hidden=true;
-  document.getElementById("adminPanel").hidden=false;
-  document.getElementById("loginError").textContent="";
-  document.getElementById("adminPassword").value="";
-  showRecords();
- }else{
-  document.getElementById("loginError").textContent="Şifre yanlış!";
- }
-});
-
-function showRecords(){
- if(!isAdmin)return;
-
- const records=getRecords();
- const list=document.getElementById("recordList");
- document.getElementById("recordCount").textContent=records.length+" kayıt";
- list.innerHTML="";
-
- if(records.length===0){
-  list.textContent="Henüz kayıt yok.";
-  return;
- }
-
- records.forEach(record=>{
-  const box=document.createElement("div");
-  box.className="record";
-
-  const heading=document.createElement("small");
-  heading.textContent=record.type+" • "+record.date;
-
-  const username=document.createElement("b");
-  username.style.display="block";
-  username.style.marginTop="8px";
-  username.textContent=record.username+" — "+record.title;
-
-  const detail=document.createElement("p");
-  detail.textContent=record.message;
-
-  const del=document.createElement("button");
-  del.className="danger";
-  del.textContent="Bu kaydı sil";
-  del.onclick=()=>deleteRecord(record.id);
-
-  box.append(heading,username,detail,del);
-  list.append(box);
- });
-}
-
-function deleteRecord(id){
- const records=getRecords().filter(record=>record.id!==id);
- localStorage.setItem(STORAGE_KEY,JSON.stringify(records));
- showRecords();
-}
-
-function deleteAll(){
- if(!isAdmin)return;
- if(!confirm("Bütün kayıtlar silinsin mi?"))return;
- localStorage.removeItem(STORAGE_KEY);
- showRecords();
-}
-
-function logout(){
- isAdmin=false;
- document.getElementById("adminPanel").hidden=true;
- document.getElementById("loginBox").hidden=false;
-}
-
+function copyIP(){const ip="bloctr.swiftservers.org";if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(ip).then(()=>alert("Sunucu IP'si kopyalandı!")).catch(()=>prompt("IP adresini kopyala:",ip));}else{prompt("IP adresini kopyala:",ip);}}
 </script>
 </body>
 </html>
