@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLOCTR SMP</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080b09;color:#f4fff5;font-family:Arial,sans-serif}
+header{padding:22px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #26352a}
+.logo{font-size:27px;font-weight:900;letter-spacing:3px}
+.logo span,h1 span{color:#8cff00}
+nav a{color:#b7c2b8;text-decoration:none;margin-left:20px}
+nav a:hover{color:#8cff00}
+.hero{text-align:center;padding:115px 20px;background:radial-gradient(ellipse at center,#1b301b,#080b09 65%)}
+.tag{color:#8cff00;border:1px solid #526b39;padding:9px 15px;border-radius:30px;font-size:12px;letter-spacing:2px}
+h1{font-size:clamp(55px,10vw,105px);margin:30px 0 15px}
+.lead{color:#a6b3a8;font-size:18px;line-height:1.7}
+.btn{display:inline-block;padding:15px 23px;margin:10px;border-radius:8px;text-decoration:none;font-weight:bold}
+.green{background:#8cff00;color:#101609}
+.dark{background:#172019;color:white;border:1px solid #334536}
+section{max-width:1000px;margin:auto;padding:65px 22px}
+h2{font-size:32px}
+.sub{color:#a6b3a8}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#101713;border:1px solid #26352a;border-radius:13px;padding:24px}
+.card p{color:#a6b3a8;line-height:1.6}
+.server{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.ip{color:#8cff00;font-family:monospace;font-weight:bold;word-break:break-all}
+button{border:0;cursor:pointer;font-weight:bold;padding:14px 20px;border-radius:8px}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rule{padding:17px;background:#101713;border:1px solid #26352a;border-radius:9px}
+footer{text-align:center;padding:28px;color:#829087;border-top:1px solid #26352a}
+@media(max-width:650px){.grid,.rules{grid-template-columns:1fr}nav a{margin-left:8px;font-size:13px}.hero{padding:80px 15px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">BLO<span>C</span>TR</div>
+<nav>
+<a href="#ozellikler">Özellikler</a>
+<a href="#sunucu">Sunucu</a>
+<a href="#kurallar">Kurallar</a>
+</nav>
+</header>
+
+<div class="hero">
+<div class="tag">MINECRAFT SURVIVAL SMP</div>
+<h1>OYUNA <span>KATIL.</span></h1>
+<p class="lead">Yeni maceralar, dostluklar ve keşfedilecek yepyeni bir dünya.<br>BLOCTR SMP seni bekliyor.</p>
+<a class="btn green" href="#sunucu">SUNUCUYA KATIL</a>
+<a class="btn dark" href="#kurallar">KURALLARI GÖR</a>
+</div>
+
+<section id="ozellikler">
+<h2>BLOCTR dünyası</h2>
+<p class="sub">Birlikte oyna, keşfet ve kendi hikâyeni yaz.</p>
+<div class="grid">
+<div class="card"><h3>🌲 Survival SMP</h3><p>Kaynaklarını topla, üssünü kur ve kendi yolunu çiz.</p></div>
+<div class="card"><h3>⚔️ Topluluk</h3><p>Arkadaşlarınla oyna, ticaret yap ve maceralara katıl.</p></div>
+<div class="card"><h3>🛡️ Adil oyun</h3><p>Herkes için eğlenceli ve saygılı bir ortam.</p></div>
+</div>
+</section>
+
+<section id="sunucu">
+<div class="card server">
+<div>
+<h2>Sunucuya katıl</h2>
+<p class="sub">Minecraft Java Edition · Paper</p>
+<div class="ip" id="serverIp">IP_ADRESINI_BURAYA_YAZ</div>
+</div>
+<button class="green" onclick="copyIp()">IP'Yİ KOPYALA</button>
+</div>
+</section>
+
+<section id="kurallar">
+<h2>Sunucu kuralları</h2>
+<p class="sub">Herkes için güzel bir oyun ortamı oluşturalım.</p>
+<div class="rules">
+<div class="rule">01 · Hile ve haksız avantaj yasaktır.</div>
+<div class="rule">02 · Oyunculara saygılı davran.</div>
+<div class="rule">03 · Bug ve açıkları kötüye kullanma.</div>
+<div class="rule">04 · Spam ve reklam yapma.</div>
+</div>
+</section>
+
+<footer>BLOCTR SMP · Minecraft topluluğu</footer>
+
+<script>
+function copyIp(){
+const ip=document.getElementById("serverIp").textContent.trim();
+if(ip==="IP_ADRESINI_BURAYA_YAZ"){
+alert("Sunucu IP adresi henüz eklenmedi!");
+return;
+}
+navigator.clipboard.writeText(ip).then(()=>alert("IP kopyalandı!"));
+}
+</script>
+</body>
+</html>
