@@ -116,6 +116,21 @@ section{padding:82px 0}h2{font-size:36px;margin:12px 0 28px}.grid,.gallery-grid{
 footer{border-top:1px solid #29372e;padding:28px;color:#aab8ad;font-size:13px}footer b{color:var(--green)}
 @media(max-width:720px){nav{padding:12px 0;flex-wrap:wrap}.links{order:3;width:100%;justify-content:center;gap:18px}.nav-join{font-size:10px}.hero{min-height:700px;height:auto}.hero-content{margin-top:-65px}.pixel-player{left:3%;transform:scale(.7);transform-origin:bottom left}.wolf{left:1%;font-size:42px}.castle{right:-10%;transform:scale(.7);transform-origin:bottom right}.hero-stats{bottom:12px;gap:10px;padding:12px}.hero-stats b{font-size:10px}.hero-stats small{font-size:8px}.grid,.gallery-grid,.rules{grid-template-columns:1fr}h2{font-size:29px}.server-card{padding:24px}}
 
+
+.hero{background:#07100d}
+.hero-photo{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,8,8,.56),rgba(3,8,8,.25),rgba(3,8,8,.62)),linear-gradient(0deg,#05090d 0%,transparent 35%),url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Minecraft_-_1.18_mountains.jpg') center 52%/cover no-repeat;transform:scale(1.02)}
+.hero-content{z-index:4;background:rgba(3,8,8,.24);padding:35px 45px;border:1px solid rgba(190,255,155,.18);border-radius:20px;backdrop-filter:blur(3px)}
+.hero-stats{z-index:5}
+.gallery-card{position:relative;overflow:hidden;padding:0;background:#111}
+.gallery-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.gallery-card:hover img{transform:scale(1.07)}
+.gallery-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent 75%)}
+.gallery-label{position:absolute;z-index:2;left:22px;bottom:18px}
+.gallery-label small{color:var(--green);font-weight:bold}
+.gallery-label h3{font-size:24px;margin:8px 0}
+.feature span{display:none}
+@media(max-width:720px){.hero-content{padding:22px 14px}.hero-photo{background-position:55% center}}
+
 </style>
 </head>
 <body>
@@ -126,10 +141,7 @@ footer{border-top:1px solid #29372e;padding:28px;color:#aab8ad;font-size:13px}fo
 </nav></header>
 <main>
 <section class="hero" id="anasayfa">
-<div class="world-sky"></div><div class="moon"></div><div class="mountain m1"></div><div class="mountain m2"></div>
-<div class="castle"><div class="tower t1"></div><div class="tower t2"></div><div class="castle-core"></div><div class="bridge"></div></div>
-<div class="pixel-player"><div class="head"></div><div class="body"></div><div class="cape"></div><div class="legs"></div><div class="sword"></div></div>
-<div class="wolf">🐺</div>
+<div class="hero-photo"></div>
 <div class="hero-content">
 <div class="tag">MINECRAFT JAVA • SURVIVAL SMP</div>
 <h1>BLOC<span>TR</span></h1>
@@ -140,9 +152,9 @@ footer{border-top:1px solid #29372e;padding:28px;color:#aab8ad;font-size:13px}fo
 <div class="hero-stats"><div><small> SUNUCU ADRESİ</small><b>bloctr.swiftservers.org</b></div><div><small> OYUN TÜRÜ</small><b>Java Survival SMP</b></div><div><small> MACERA</small><b>Seni bekliyor!</b></div></div>
 </section>
 <section class="container features"><div class="eyebrow">BLOCTR DÜNYASI</div><h2>Bir dünyadan fazlası.</h2><div class="grid">
-<article class="feature f1"><span>⛏</span><h3>Keşfet</h3><p>Mağaralara in, yeni bölgeler bul ve dünyayı keşfet.</p></article>
-<article class="feature f2"><span>🏡</span><h3>İnşa et</h3><p>Kendi üssünü kur, hayalindeki yapıları tasarla.</p></article>
-<article class="feature f3"><span>⚔</span><h3>Birlikte oyna</h3><p>Arkadaşlarınla maceraya atıl ve birlikte geliş.</p></article>
+<article class="feature f1"><h3>Keşfet</h3><p>Mağaralara in, yeni bölgeler bul ve dünyayı keşfet.</p></article>
+<article class="feature f2"><h3>İnşa et</h3><p>Kendi üssünü kur, hayalindeki yapıları tasarla.</p></article>
+<article class="feature f3"><h3>Birlikte oyna</h3><p>Arkadaşlarınla maceraya atıl ve birlikte geliş.</p></article>
 </div></section>
 <section class="container" id="sunucu"><div class="server-card"><div><div class="eyebrow">JOIN THE SERVER</div><h2>Macera burada başlıyor.</h2><p>Minecraft Java Edition</p><div class="server-ip" id="serverIP">bloctr.swiftservers.org</div></div><button class="hero-button" onclick="copyIP()">IP'Yİ KOPYALA</button></div></section>
 <section class="container" id="kurallar"><div class="eyebrow">PLAY FAIR</div><h2>Sunucu kuralları.</h2><div class="rules">
@@ -151,7 +163,9 @@ footer{border-top:1px solid #29372e;padding:28px;color:#aab8ad;font-size:13px}fo
 <div class="rule"><b>05 — Spam yapma</b><p>Sohbeti gereksiz mesajlarla doldurma.</p></div><div class="rule"><b>06 — Bug kullanma</b><p>Oyun açıklarını kötüye kullanma.</p></div>
 </div></section>
 <section class="container gallery" id="galeri"><div class="eyebrow">YOUR NEXT ADVENTURE</div><h2>BLOCTR'de seni neler bekliyor?</h2><div class="gallery-grid">
-<div class="gallery-card g1"><span>01</span><h3>Yeni dünyalar</h3></div><div class="gallery-card g2"><span>02</span><h3>Büyük yapılar</h3></div><div class="gallery-card g3"><span>03</span><h3>Unutulmaz maceralar</h3></div>
+<div class="gallery-card g1"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Minecraft_-_1.18_mountains.jpg" alt="Minecraft dağ ve orman manzarası"><div class="gallery-label"><small>01</small><h3>Yeni dünyalar</h3></div></div>
+<div class="gallery-card g2"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Minecraft_-_End_city.jpg" alt="Minecraft End şehri"><div class="gallery-label"><small>02</small><h3>Gizemli yapılar</h3></div></div>
+<div class="gallery-card g3"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Minecraft_-_Deep_Dark.png" alt="Minecraft Deep Dark biyomu"><div class="gallery-label"><small>03</small><h3>Derin maceralar</h3></div></div>
 </div></section>
 </main><footer><div class="container"><b>BLOCTR SMP</b> © 2026 — BUILD YOUR LEGACY.</div></footer>
 <script>
