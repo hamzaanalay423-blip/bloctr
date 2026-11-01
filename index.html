@@ -58,6 +58,24 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
  .links a{font-size:12px}
  h1{letter-spacing:-3px}
 }
+
+body{background:#05090b}
+header{background:rgba(4,9,15,.9);backdrop-filter:blur(14px)}
+.hero{position:relative;min-height:610px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(3,7,10,.48),rgba(3,7,10,.62)),url('https://images.unsplash.com/photo-1607513746994-51f730a44832?auto=format&fit=crop&w=2000&q=90') center/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080b09 0%,transparent 34%);pointer-events:none}
+.hero>*{position:relative;z-index:1}
+.hero h1{text-shadow:0 8px 30px #000;letter-spacing:-3px}
+.hero p{color:#fff;text-shadow:0 2px 8px #000}
+.panel,.rule{box-shadow:0 12px 35px #0005;transition:.25s}
+.panel:hover,.rule:hover{transform:translateY(-4px);border-color:#86d719}
+.gallery img{display:block;width:100%;height:210px;object-fit:cover;transition:transform .4s}
+.gallery .panel{padding:0;overflow:hidden}
+.gallery .panel:hover img{transform:scale(1.05)}
+.gallery .caption{padding:17px}
+section{padding-top:75px;padding-bottom:75px}
+.ipbox{background:linear-gradient(120deg,#14251b,#101a25);box-shadow:0 15px 45px #0007}
+@media(max-width:700px){.hero{min-height:520px}.hero h1{font-size:clamp(48px,14vw,76px)}}
+
 </style>
 </head>
 <body>
@@ -66,11 +84,11 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
 <nav class="container">
  <a class="logo" href="#">BLO<span>C</span>TR</a>
  <div class="links">
-  <a href="#hakkinda">Hakkında</a>
+  <a href="#hakkinda">Ana Sayfa</a>
+  <a href="#galeri">Galeri</a>
   <a href="#galeri">Galeri</a>
   <a href="#sunucu">Sunucu</a>
   <a href="#kurallar">Kurallar</a>
-  <a href="#kayitlar">Yönetici</a>
  </div>
 </nav>
 </header>
@@ -114,6 +132,16 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
  </div>
 </section>
 
+
+<section class="container gallery" id="galeri">
+ <div class="eyebrow">BLOCTR GALLERY</div><h2>Bu dünyada kendi izini bırak.</h2>
+ <div class="grid">
+  <div class="panel"><img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=900&q=85" alt="Oyun dünyası"><div class="caption"><h3>Keşfet</h3><p>Yeni yerler, yeni maceralar.</p></div></div>
+  <div class="panel"><img src="https://images.unsplash.com/photo-1607513746994-51f730a44832?auto=format&fit=crop&w=900&q=85" alt="Blok tarzı manzara"><div class="caption"><h3>İnşa et</h3><p>Hayalindeki yapıyı oluştur.</p></div></div>
+  <div class="panel"><img src="https://images.unsplash.com/photo-1587573089734-09cb69c0f2e4?auto=format&fit=crop&w=900&q=85" alt="Maceraya katıl"><div class="caption"><h3>Maceraya katıl</h3><p>BLOCTR'de hikâyen şimdi başlıyor.</p></div></div>
+ </div>
+</section>
+
 <section class="container" id="sunucu">
  <div class="ipbox">
   <div>
@@ -136,39 +164,6 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
   <div class="rule"><b>04 — Griefing yasak</b><p class="muted">Başkasının yapılarına zarar verme.</p></div>
   <div class="rule"><b>05 — Spam yapma</b><p class="muted">Sohbeti gereksiz mesajlarla doldurma.</p></div>
   <div class="rule"><b>06 — Bug kullanma</b><p class="muted">Oyun açıklarını kötüye kullanma.</p></div>
- </div>
-</section>
-
-<section class="container" id="kayitlar">
- <div class="eyebrow">ADMIN PANEL</div>
- <h2>Yönetici girişi.</h2>
-
- <div class="panel" id="loginBox">
-  <h3>🔐 Kayıtları görüntüle</h3>
-  <p class="muted">Yalnızca yönetici şifresiyle açılır.</p>
-  <form id="loginForm">
-   <label>Şifre</label>
-   <input id="adminPassword" type="password" required placeholder="Yönetici şifresi" autocomplete="off">
-   <button class="green">GİRİŞ YAP</button>
-  </form>
-  <p id="loginError" style="color:#ff6565"></p>
- </div>
-
- <div class="panel" id="adminPanel" hidden>
-  <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
-   <b>Gelen bildirimler</b>
-   <button class="dark" onclick="showRecords()">YENİLE</button>
-  </div>
-  <p id="recordCount" class="muted">0 kayıt</p>
-  <div id="recordList" class="records"></div>
-  <button class="danger" onclick="deleteAll()">TÜM KAYITLARI SİL</button>
-  <button class="dark" onclick="logout()">ÇIKIŞ YAP</button>
- </div>
-
- <div class="notice">
-  Bilgi: Bu sürüm kayıtları ziyaretçinin tarayıcısında saklar.
-  Herkesin gönderdiği kayıtları senin tek bir panelde görebilmen için
-  ortak bir veritabanı bağlantısı gereklidir.
  </div>
 </section>
 
