@@ -4,11 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BLOCTR | Minecraft SMP</title>
+<meta name="theme-color" content="#080b09">
+<title>BLOCTR | Official SMP</title>
 <style>
 :root{--bg:#080b09;--panel:#111813;--green:#a3ff12;--muted:#9aa99d;--border:#29382d}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{margin:0;background:var(--bg);color:#f4fff5;font-family:Arial,sans-serif}
 .container{width:min(1050px,92%);margin:auto}
 header{position:sticky;top:0;background:#080b09ee;border-bottom:1px solid var(--border);z-index:5}
@@ -19,16 +20,18 @@ nav{display:flex;align-items:center;justify-content:space-between;min-height:70p
 a{color:inherit;text-decoration:none}
 .links a{font-size:13px;color:#bdc9bf}
 .links a:hover{color:var(--green)}
-.hero{text-align:center;padding:105px 15px;background:radial-gradient(ellipse at center,#263c1d,#080b09 70%)}
+.hero{text-align:center;padding:110px 15px;background:radial-gradient(ellipse at center,#263c1d,#080b09 70%)}
 .tag,.eyebrow{color:var(--green);letter-spacing:3px;font-size:11px;font-weight:bold}
 h1{font-size:clamp(60px,12vw,110px);line-height:.9;margin:30px 0;letter-spacing:-5px}
-.hero p,.muted{color:var(--muted);line-height:1.7}
+.hero p{color:var(--muted);line-height:1.7;max-width:620px;margin:auto}
+.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
 .btn,button{border:0;border-radius:8px;padding:13px 18px;font-weight:bold;cursor:pointer}
 .green{background:var(--green);color:#101609}
 .dark{background:#1b261d;color:white;border:1px solid var(--border)}
-.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+button:hover,.btn:hover{filter:brightness(1.15);transform:translateY(-2px)}
 section{padding:65px 0}
 h2{font-size:34px;margin:12px 0 25px}
+.muted{color:var(--muted);line-height:1.7}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .panel{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:22px}
 .panel p{color:var(--muted);font-size:14px;line-height:1.6}
@@ -40,17 +43,21 @@ h2{font-size:34px;margin:12px 0 25px}
 form{display:grid;gap:10px}
 label{font-size:13px;color:#c5d2c7}
 input,textarea,select{width:100%;padding:13px;background:#080e0a;border:1px solid #344638;border-radius:8px;color:white;font:inherit}
-textarea{min-height:100px;resize:vertical}
-button:hover,.btn:hover{filter:brightness(1.15)}
-.forms{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+textarea{min-height:110px;resize:vertical}
 .records{display:grid;gap:12px}
 .record{background:#0b120d;border:1px solid var(--border);padding:17px;border-radius:10px;overflow-wrap:anywhere}
 .record small{color:var(--green)}
 .record p{white-space:pre-wrap;color:#c6d2c8;font-size:13px}
 .danger{background:#451d1d;color:white}
 .notice{padding:14px;background:#25200f;border:1px solid #67572b;border-radius:9px;color:#e0d39b;font-size:12px;line-height:1.6;margin-top:15px}
+[hidden]{display:none!important}
 footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-size:13px}
-@media(max-width:700px){.grid,.forms,.rules{grid-template-columns:1fr}.links{gap:10px}.links a{font-size:12px}h1{letter-spacing:-3px}}
+@media(max-width:700px){
+ .grid,.rules{grid-template-columns:1fr}
+ .links{gap:10px}
+ .links a{font-size:12px}
+ h1{letter-spacing:-3px}
+}
 </style>
 </head>
 <body>
@@ -62,9 +69,8 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
   <a href="#hakkinda">Hakkında</a>
   <a href="#sunucu">Sunucu</a>
   <a href="#kurallar">Kurallar</a>
-  <a href="#basvuru">Başvurular</a>
   <a href="#oneriler">Öneriler</a>
-  <a href="#kayitlar">Kayıtlar</a>
+  <a href="#kayitlar">Yönetici</a>
  </div>
 </nav>
 </header>
@@ -75,7 +81,7 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
  <p>Kendi hikâyeni yaz. Dünyayı keşfet, arkadaşlarınla oyna ve BLOCTR'nin bir parçası ol.</p>
  <div class="buttons">
   <a class="btn green" href="#sunucu">SUNUCUYA KATIL</a>
-  <a class="btn dark" href="#basvuru">BAŞVURU YAP</a>
+  <a class="btn dark" href="#oneriler">ÖNERİ GÖNDER</a>
  </div>
 </div>
 
@@ -91,13 +97,19 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
 
 <section class="container" id="sunucu">
  <div class="ipbox">
-  <div><div class="eyebrow">SERVER ADDRESS</div><h2>Sunucuya katıl.</h2><div class="ip" id="serverIP">bloctr.swiftservers.org</div><p class="muted">Minecraft Java Edition</p></div>
+  <div>
+   <div class="eyebrow">SERVER ADDRESS</div>
+   <h2>Sunucuya katıl.</h2>
+   <div class="ip" id="serverIP">bloctr.swiftservers.org</div>
+   <p class="muted">Minecraft Java Edition</p>
+  </div>
   <button class="green" onclick="copyIP()">IP'Yİ KOPYALA</button>
  </div>
 </section>
 
 <section class="container" id="kurallar">
- <div class="eyebrow">PLAY FAIR</div><h2>Sunucu kuralları.</h2>
+ <div class="eyebrow">PLAY FAIR</div>
+ <h2>Sunucu kuralları.</h2>
  <div class="rules">
   <div class="rule"><b>01 — Hile yasak</b><p class="muted">Hile ve X-Ray kullanılamaz.</p></div>
   <div class="rule"><b>02 — Saygılı ol</b><p class="muted">Hakaret ve zorbalık yasaktır.</p></div>
@@ -108,73 +120,78 @@ footer{border-top:1px solid var(--border);padding:25px;color:var(--muted);font-s
  </div>
 </section>
 
-<section class="container" id="basvuru">
- <div class="eyebrow">JOIN OUR COMMUNITY</div><h2>Başvurular.</h2>
- <div class="forms">
-  <div class="panel">
-   <h3>📝 Oyuncu başvurusu</h3>
-   <form id="playerForm">
-    <label>Minecraft kullanıcı adın</label>
-    <input name="username" required maxlength="32" placeholder="Oyuncu adın">
-    <label>Neden katılmak istiyorsun?</label>
-    <textarea name="reason" required maxlength="500" placeholder="Kendinden bahset..."></textarea>
-    <button class="green">BAŞVURUYU KAYDET</button>
-   </form>
-  </div>
-  <div class="panel">
-   <h3>🛡️ Yetkili başvurusu</h3>
-   <form id="staffForm">
-    <label>Minecraft kullanıcı adın</label>
-    <input name="username" required maxlength="32" placeholder="Oyuncu adın">
-    <label>Başvurulan görev</label>
-    <select name="role"><option>Moderator</option><option>Helper</option><option>Builder</option></select>
-    <label>Neden seni seçmeliyiz?</label>
-    <textarea name="reason" required maxlength="500" placeholder="Deneyimini anlat..."></textarea>
-    <button class="green">BAŞVURUYU KAYDET</button>
-   </form>
-  </div>
- </div>
-</section>
-
 <section class="container" id="oneriler">
- <div class="eyebrow">YOUR VOICE MATTERS</div><h2>Öneri ve şikâyetler.</h2>
+ <div class="eyebrow">YOUR VOICE MATTERS</div>
+ <h2>Öneri ve şikâyetler.</h2>
+ <p class="muted">BLOCTR hakkında önerilerini, şikâyetlerini veya hata bildirimlerini gönder.</p>
  <div class="panel">
   <form id="suggestForm">
+   <label>Minecraft kullanıcı adın</label>
+   <input name="username" required maxlength="32" placeholder="Minecraft adın">
    <label>Bildirim türü</label>
-   <select name="type"><option>Öneri</option><option>Şikâyet</option><option>Hata bildirimi</option></select>
+   <select name="type">
+    <option>Öneri</option>
+    <option>Şikâyet</option>
+    <option>Hata bildirimi</option>
+   </select>
    <label>Başlık</label>
    <input name="title" required maxlength="80" placeholder="Konunun başlığı">
    <label>Açıklama</label>
    <textarea name="message" required maxlength="1000" placeholder="Açıklamanı yaz..."></textarea>
-   <button class="green">KAYDET</button>
+   <button class="green">GÖNDER</button>
   </form>
+  <p id="submitMessage" class="muted"></p>
  </div>
 </section>
 
 <section class="container" id="kayitlar">
- <div class="eyebrow">LOCAL ADMIN PANEL</div>
- <h2>Kayıtları görüntüle.</h2>
- <p class="muted">Bu bölümde yalnızca bu tarayıcıda kaydedilen kayıtlar görünür.</p>
- <div class="panel">
+ <div class="eyebrow">ADMIN PANEL</div>
+ <h2>Yönetici girişi.</h2>
+
+ <div class="panel" id="loginBox">
+  <h3>🔐 Kayıtları görüntüle</h3>
+  <p class="muted">Yalnızca yönetici şifresiyle açılır.</p>
+  <form id="loginForm">
+   <label>Şifre</label>
+   <input id="adminPassword" type="password" required placeholder="Yönetici şifresi" autocomplete="off">
+   <button class="green">GİRİŞ YAP</button>
+  </form>
+  <p id="loginError" style="color:#ff6565"></p>
+ </div>
+
+ <div class="panel" id="adminPanel" hidden>
   <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
-   <b>Başvurular ve bildirimler</b>
+   <b>Gelen bildirimler</b>
    <button class="dark" onclick="showRecords()">YENİLE</button>
   </div>
   <p id="recordCount" class="muted">0 kayıt</p>
   <div id="recordList" class="records"></div>
   <button class="danger" onclick="deleteAll()">TÜM KAYITLARI SİL</button>
+  <button class="dark" onclick="logout()">ÇIKIŞ YAP</button>
  </div>
- <div class="notice">Dikkat: Bu kayıt alanı şifre korumalı değildir. Başka ziyaretçiler aynı tarayıcıyı kullanırsa kayıtları görebilir. Gerçek, ortak ve güvenli yönetici paneli için sunucu taraflı veritabanı gerekir.</div>
+
+ <div class="notice">
+  Bilgi: Bu sürüm kayıtları ziyaretçinin tarayıcısında saklar.
+  Herkesin gönderdiği kayıtları senin tek bir panelde görebilmen için
+  ortak bir veritabanı bağlantısı gereklidir.
+ </div>
 </section>
 
-<footer><div class="container">BLOCTR SMP © 2026 — BUILD YOUR LEGACY.</div></footer>
+<footer>
+ <div class="container">BLOCTR SMP © 2026 — BUILD YOUR LEGACY.</div>
+</footer>
 
 <script>
-const STORAGE_KEY = "bloctr_records_v1";
+const STORAGE_KEY="bloctr_records_v3";
+const ADMIN_PASSWORD="72797";
+let isAdmin=false;
 
 function getRecords(){
- try{return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []}
- catch(e){return []}
+ try{
+  return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+ }catch(error){
+  return [];
+ }
 }
 
 function saveRecord(record){
@@ -185,95 +202,105 @@ function saveRecord(record){
   ...record
  });
  localStorage.setItem(STORAGE_KEY,JSON.stringify(records));
- showRecords();
- alert("Kaydın bu tarayıcıya kaydedildi!");
+ document.getElementById("suggestForm").reset();
+ document.getElementById("submitMessage").textContent="Bildirim bu tarayıcıya kaydedildi.";
+ if(isAdmin)showRecords();
 }
 
 function copyIP(){
  const ip=document.getElementById("serverIP").textContent.trim();
- if(navigator.clipboard){
-  navigator.clipboard.writeText(ip).then(()=>alert("IP kopyalandı!"));
+ if(navigator.clipboard && window.isSecureContext){
+  navigator.clipboard.writeText(ip).then(()=>alert("IP kopyalandı!"))
+   .catch(()=>prompt("IP adresini kopyala:",ip));
  }else{
   prompt("IP adresini kopyala:",ip);
  }
 }
-
-document.getElementById("playerForm").addEventListener("submit",function(e){
- e.preventDefault();
- const data=new FormData(this);
- saveRecord({
-  type:"Oyuncu başvurusu",
-  username:data.get("username"),
-  message:data.get("reason")
- });
- this.reset();
-});
-
-document.getElementById("staffForm").addEventListener("submit",function(e){
- e.preventDefault();
- const data=new FormData(this);
- saveRecord({
-  type:"Yetkili başvurusu",
-  username:data.get("username"),
-  role:data.get("role"),
-  message:data.get("reason")
- });
- this.reset();
-});
 
 document.getElementById("suggestForm").addEventListener("submit",function(e){
  e.preventDefault();
  const data=new FormData(this);
  saveRecord({
   type:data.get("type"),
+  username:data.get("username"),
   title:data.get("title"),
   message:data.get("message")
  });
- this.reset();
+});
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const password=document.getElementById("adminPassword").value;
+
+ if(password===ADMIN_PASSWORD){
+  isAdmin=true;
+  document.getElementById("loginBox").hidden=true;
+  document.getElementById("adminPanel").hidden=false;
+  document.getElementById("loginError").textContent="";
+  document.getElementById("adminPassword").value="";
+  showRecords();
+ }else{
+  document.getElementById("loginError").textContent="Şifre yanlış!";
+ }
 });
 
 function showRecords(){
+ if(!isAdmin)return;
+
  const records=getRecords();
  const list=document.getElementById("recordList");
  document.getElementById("recordCount").textContent=records.length+" kayıt";
  list.innerHTML="";
+
  if(records.length===0){
   list.textContent="Henüz kayıt yok.";
   return;
  }
+
  records.forEach(record=>{
   const box=document.createElement("div");
   box.className="record";
+
   const heading=document.createElement("small");
   heading.textContent=record.type+" • "+record.date;
-  const title=document.createElement("b");
-  title.style.display="block";
-  title.style.marginTop="8px";
-  title.textContent=record.username || record.title || "";
+
+  const username=document.createElement("b");
+  username.style.display="block";
+  username.style.marginTop="8px";
+  username.textContent=record.username+" — "+record.title;
+
   const detail=document.createElement("p");
-  detail.textContent=(record.role ? "Görev: "+record.role+"\n" : "")+(record.message || "");
+  detail.textContent=record.message;
+
   const del=document.createElement("button");
   del.className="danger";
   del.textContent="Bu kaydı sil";
   del.onclick=()=>deleteRecord(record.id);
-  box.append(heading,title,detail,del);
+
+  box.append(heading,username,detail,del);
   list.append(box);
  });
 }
 
 function deleteRecord(id){
- const records=getRecords().filter(r=>r.id!==id);
+ const records=getRecords().filter(record=>record.id!==id);
  localStorage.setItem(STORAGE_KEY,JSON.stringify(records));
  showRecords();
 }
 
 function deleteAll(){
- if(!confirm("Bu tarayıcıdaki bütün kayıtlar silinsin mi?"))return;
+ if(!isAdmin)return;
+ if(!confirm("Bütün kayıtlar silinsin mi?"))return;
  localStorage.removeItem(STORAGE_KEY);
  showRecords();
 }
 
-showRecords();
+function logout(){
+ isAdmin=false;
+ document.getElementById("adminPanel").hidden=true;
+ document.getElementById("loginBox").hidden=false;
+}
+
 </script>
 </body>
 </html>
